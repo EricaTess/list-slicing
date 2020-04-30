@@ -48,8 +48,8 @@ def top(input_list):
     ['Jan', 'Feb']
 
     """
-
-    return []
+    input_list.pop()
+    return input_list
 
 
 def first_three(input_list):
