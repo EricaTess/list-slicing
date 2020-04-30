@@ -15,8 +15,10 @@ def custom_len(input_list):
         8
 
     """
-
-    return len(input_list)
+    count = 0
+    for el in input_list:
+        count += 1
+    return count
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -138,6 +140,7 @@ def custom_index(input_list, value):
 
     """
     count = 0
+
     for el in input_list:
         if el == value:
             return count
@@ -179,7 +182,7 @@ def custom_reverse(input_list):
         True
 
     """
-
+    input_list[::-1] == input_list.reverse()
     pass
 
 
@@ -199,8 +202,11 @@ def custom_contains(input_list, value):
         True
 
     """
+    for el in input_list:
+        if el == value:
+            return True
 
-    return None
+    return False
 
 
 def custom_equality(some_list, another_list):
@@ -219,7 +225,15 @@ def custom_equality(some_list, another_list):
 
     """
 
-    return None
+    if custom_len(some_list) != custom_len(another_list):
+        return False
+
+    else:
+        for i in range(len(some_list)):
+            if some_list[i] != another_list[i]:
+                return False
+
+        return True
 
 
 # This is the part were we actually run the doctests.
